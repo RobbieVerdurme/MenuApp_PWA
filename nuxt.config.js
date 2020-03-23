@@ -12,7 +12,8 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons' }
     ]
   },
   /*
@@ -28,6 +29,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    // https://vuematerial.io/
+    { src: '~/plugins/vue-material.js' }
   ],
   /*
   ** Nuxt.js dev-modules
