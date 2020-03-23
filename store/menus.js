@@ -21,5 +21,10 @@ export const getters = {
   /**
    * get the max length of the menulist
    */
-  getMenuListLength: state => state.menus.length
+  getMenuListLength: state => state.menus.length,
+
+  /**
+   * get all menu items
+   */
+  getAllMenuItems: state => state.menus
 }
