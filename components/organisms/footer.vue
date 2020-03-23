@@ -1,8 +1,8 @@
 <template>
   <div class="phone-viewport">
-    <md-bottom-bar md-type="shift" class="bottombar">
-      <md-bottom-bar-item id="bottom-bar-item-home" md-label="Home" md-icon="home" class="withitem" />
-      <md-bottom-bar-item id="bottom-bar-item-pages" md-label="List" md-icon="list" class="withitem" />
+    <md-bottom-bar md-type="shift">
+      <md-bottom-bar-item id="bottom-bar-item-home" md-label="Home" md-icon="home" />
+      <md-bottom-bar-item id="bottom-bar-item-list" md-label="List" md-icon="list" />
     </md-bottom-bar>
   </div>
 </template>
@@ -17,13 +17,4 @@
   position: absolute;
   bottom: 0px;
 }
-
-.bottombar {
-  background-color: orange;
-}
-
-.withitem {
-  width: 50%;
-}
-
 </style>
