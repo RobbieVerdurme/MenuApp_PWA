@@ -33,7 +33,10 @@ export default {
     { src: '~/plugins/vue-material.js' },
 
     // https://firebase.nuxtjs.org/
-    { src: '~/plugins/firebase.js' }
+    { src: '~/plugins/firebase.js' },
+
+    // https://dev.to/drewclem/building-user-accounts-with-nuxt-vuex-and-firebase-2o6l
+    { src: '~/plugins/fireauth.js' }
   ],
   /*
   ** Nuxt.js dev-modules
