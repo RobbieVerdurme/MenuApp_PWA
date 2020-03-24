@@ -24,12 +24,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-  .md-card {
-    width: 100%;
-    margin: 4px;
-    display: inline-block;
-    vertical-align: top;
-  }
-</style>
