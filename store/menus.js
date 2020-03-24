@@ -26,5 +26,12 @@ export const getters = {
   /**
    * get all menu items
    */
-  getAllMenuItems: state => state.menus
+  getAllMenuItems: state => state.menus,
+
+  /**
+   * get menus with filter text
+   */
+  getAllMenuWithFilter: state => (filtertext) => {
+    return state.menus.filter(m => m.title.includes(filtertext) || m.ingredients.find(i => i.title.includes(filtertext)))
+  }
 }

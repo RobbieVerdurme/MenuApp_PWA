@@ -1,17 +1,30 @@
 <template>
-  <md-content class="md-scrollbar">
-    <menuList v-if="menulist" :list="menulist" />
-  </md-content>
+  <div>
+    <vFilter @filterListTextChanged="filterList" />
+    <md-content class="md-scrollbar">
+      <menuList v-if="menulist" :list.sync="menulist" />
+    </md-content>
+  </div>
 </template>
 
 <script>
 export default {
   components: {
-    menuList: () => import('~/components/molecules/list')
+    menuList: () => import('~/components/organisms/list'),
+    vFilter: () => import('~/components/molecules/filter')
   },
-  computed: {
-    menulist () {
-      return this.$store.getters['menus/getAllMenuItems']
+  data () {
+    return {
+      menulist: this.$store.getters['menus/getAllMenuItems']
+    }
+  },
+  methods: {
+    /**
+     * @param {String} string value of the filter
+     * filter list with de value that has been given
+     */
+    filterList (value) {
+      this.menulist = this.$store.getters['menus/getAllMenuWithFilter'](value.toString())
     }
   }
 }

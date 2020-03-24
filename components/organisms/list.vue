@@ -1,7 +1,7 @@
 <template>
   <md-list>
     <md-list-item v-for="item in list" :key="item.id">
-      <menuListItem :item="item" />
+      <menuListItem :item.sync="item" />
     </md-list-item>
   </md-list>
 </template>
