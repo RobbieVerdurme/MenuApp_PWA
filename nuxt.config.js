@@ -30,7 +30,10 @@ export default {
   */
   plugins: [
     // https://vuematerial.io/
-    { src: '~/plugins/vue-material.js' }
+    { src: '~/plugins/vue-material.js' },
+
+    // https://firebase.nuxtjs.org/
+    { src: '~/plugins/firebase.js' }
   ],
   /*
   ** Nuxt.js dev-modules
