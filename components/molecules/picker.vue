@@ -1,7 +1,9 @@
 <template>
   <div class="center">
     <!--Selected item-->
-    <span class="md-display-1">{{ selectedMenu.title }}</span>
+    <nuxt-link :to="{name: 'menu-id-info', params: {id: selectedMenu.id}}">
+      <span class="md-display-1">{{ selectedMenu.title }}</span>
+    </nuxt-link>
     <!--generate button-->
     <md-button class="md-raised md-primary" @click="generateRandomMenuitem">
       {{ generateMenuitem }}
