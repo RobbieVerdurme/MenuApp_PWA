@@ -11,11 +11,9 @@ export const state = () => ({
 export const getters = {
   /**
    * get menu item with id
-   * @param {*} state
-   * @param {number} id
    */
   getMenuitem: state => (id) => {
-    return state.menus[id]
+    return state.menus.find(m => m.id === id)
   },
 
   /**
