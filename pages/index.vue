@@ -1,5 +1,5 @@
 <template>
-  <picker />
+  <picker class="app-content" />
 </template>
 
 <script>
@@ -9,3 +9,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.app-content {
+  min-height: 80vh;
+}
+</style>

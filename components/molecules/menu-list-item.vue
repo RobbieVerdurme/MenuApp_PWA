@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="{name: 'menu-id-info', params: {id: item.key} }">
+  <nuxt-link :to="{name: 'menu-id-info', params: {id: item.key} }" class="contentwith">
     <md-card>
       <md-card-header>
         <md-card-header-text>
@@ -23,3 +23,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.contentwith {
+  width: 100%;
+}
+</style>

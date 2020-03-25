@@ -31,7 +31,7 @@ export default {
 </script>
 <style scoped>
   .md-content {
-    max-height: 80vh;
+    max-height: 70vh;
     overflow: auto;
   }
 </style>
