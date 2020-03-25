@@ -2,9 +2,7 @@
  * state
  */
 export const state = () => ({
-  menus: [
-    { id: 1, title: 'test', content: 'ahahh', ingredients: [{ id: 1, title: 'test' }] }
-  ]
+  menus: []
 })
 
 /**
@@ -12,10 +10,17 @@ export const state = () => ({
  */
 export const getters = {
   /**
+   * get menu item on place number
+   */
+  getMenuitem: state => (index) => {
+    return state.menus[index]
+  },
+
+  /**
    * get menu item with id
    */
-  getMenuitem: state => (id) => {
-    return state.menus.find(m => m.id === id)
+  getMenuitemWithId: state => (id) => {
+    return state.menus.find(m => m.key === id)
   },
 
   /**

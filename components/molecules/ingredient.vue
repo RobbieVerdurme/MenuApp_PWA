@@ -1,6 +1,6 @@
 <template>
   <md-card>
-    <md-card-content> {{ ingredient.title }} {{ ingredient.quantitiy }} {{ ingredient.mesurement }} </md-card-content>
+    <md-card-content> {{ ingredient.name }} {{ ingredient.quantity }} {{ ingredient.measurement }} </md-card-content>
   </md-card>
 </template>
 

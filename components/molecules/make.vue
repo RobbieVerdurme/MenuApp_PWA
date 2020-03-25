@@ -2,7 +2,7 @@
   <md-list>
     <md-list-item class="md-elevation-2">
       <md-field>
-        <md-textarea v-model="menu.make" md-autogrow disabled />
+        <md-textarea v-model="menu.preperation" md-autogrow disabled />
       </md-field>
     </md-list-item>
   </md-list>
