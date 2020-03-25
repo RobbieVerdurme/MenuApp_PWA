@@ -1,6 +1,6 @@
 <template>
   <md-list>
-    <md-list-item v-for="item in list" :key="item.id">
+    <md-list-item v-for="item in list" :key="item.key">
       <menuListItem :item.sync="item" />
     </md-list-item>
   </md-list>

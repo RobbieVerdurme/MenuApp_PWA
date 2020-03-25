@@ -2,9 +2,7 @@
  * state
  */
 export const state = () => ({
-  menus: [
-    { id: 1, title: 'test', content: 'ahahh', ingredients: [{ id: 1, title: 'test' }] }
-  ]
+  menus: []
 })
 
 /**
@@ -12,10 +10,17 @@ export const state = () => ({
  */
 export const getters = {
   /**
+   * get menu item on place number
+   */
+  getMenuitem: state => (index) => {
+    return state.menus[index]
+  },
+
+  /**
    * get menu item with id
    */
-  getMenuitem: state => (id) => {
-    return state.menus.find(m => m.id === id)
+  getMenuitemWithId: state => (id) => {
+    return state.menus.find(m => m.key === id)
   },
 
   /**
@@ -32,6 +37,49 @@ export const getters = {
    * get menus with filter text
    */
   getAllMenuWithFilter: state => (filtertext) => {
-    return state.menus.filter(m => m.title.includes(filtertext) || m.ingredients.find(i => i.title.includes(filtertext)))
+    return state.menus.filter(m => m.name.includes(filtertext) || m.ingredients.find(i => i.name.includes(filtertext)))
+  }
+}
+
+/**
+ * mutations
+ */
+export const mutations = {
+  /**
+   * set menus with payload
+   * @param {*} state
+   * @param {Array} payload
+   */
+  setMenus (state, payload) {
+    state.menus = payload
+  }
+}
+
+/**
+ * actions
+ */
+export const actions = {
+  /**
+   * get menus from firebase
+   * @param {*} param0
+   */
+  async getMenusFromFirebase ({ commit }) {
+    const messageRef = this.$fireDb.ref('FoodList')
+
+    // get data
+    let snap
+    // eslint-disable-next-line no-useless-catch
+    try {
+      snap = await messageRef.once('value')
+    } catch (e) {
+      throw e
+    }
+
+    // convert json to array of objects
+    const res = Object.keys(snap.val().Food).map(function (key) {
+      return snap.val().Food[key]
+    })
+
+    commit('setMenus', res)
   }
 }

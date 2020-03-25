@@ -44,8 +44,24 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['@nuxtjs/firebase']
   ],
+  firebase: {
+    config: {
+      apiKey: 'AIzaSyDn3_LnvVQ1icKvYtvoyIXD_X7Ik9Lyruw',
+      authDomain: 'menuapp-1cb58.firebaseapp.com',
+      databaseURL: 'https://menuapp-1cb58.firebaseio.com',
+      projectId: 'menuapp-1cb58',
+      storageBucket: 'menuapp-1cb58.appspot.com',
+      messagingSenderId: '349364600107',
+      appId: '1:349364600107:web:94b90dadf5838f4852596e'
+    },
+    services: {
+      auth: true,
+      realtimeDb: true
+    }
+  },
   /*
   ** Build configuration
   */

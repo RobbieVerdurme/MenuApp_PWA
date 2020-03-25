@@ -4,10 +4,10 @@
       <md-card>
         <md-card-header>
           <md-card-header-text>
-            <h1> {{ menu.title }} </h1>
+            <b>{{ menu.name }}</b>
           </md-card-header-text>
         </md-card-header>
-        <md-card-content> {{ menu.content }} </md-card-content>
+        <md-card-content> {{ menu.discritpion }} </md-card-content>
       </md-card>
     </md-list-item>
   </md-list>

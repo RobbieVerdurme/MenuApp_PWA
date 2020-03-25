@@ -1,17 +1,14 @@
 <template>
-  <nuxt-link :to="{name: 'menu-id-info', params: {id: item.id} }">
+  <nuxt-link :to="{name: 'menu-id-info', params: {id: item.key} }" class="contentwith">
     <md-card>
       <md-card-header>
         <md-card-header-text>
           <div class="md-title">
-            {{ item.title }}
+            {{ item.name }}
           </div>
         </md-card-header-text>
-        <md-card-media>
-          <img src="https://omegamma.com.au/wp-content/uploads/2017/04/default-image.jpg" alt>
-        </md-card-media>
       </md-card-header>
-      <md-card-content>{{ item.content }}</md-card-content>
+      <md-card-content>{{ item.discritpion }}</md-card-content>
     </md-card>
   </nuxt-link>
 </template>
@@ -26,3 +23,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.contentwith {
+  width: 100%;
+}
+</style>
