@@ -25,7 +25,7 @@ export default {
       if (!menulistLength) {
         this.selectedMenu = { title: 'The menulist is empty' }
       } else {
-        const randomnumber = Math.floor(Math.random() * menulistLength)
+        const randomnumber = Math.floor(Math.random() * menulistLength) + 1
         this.selectedMenu = this.$store.getters['menus/getMenuitem'](randomnumber)
       }
     }

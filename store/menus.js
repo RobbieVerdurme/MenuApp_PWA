@@ -2,7 +2,9 @@
  * state
  */
 export const state = () => ({
-  menus: []
+  menus: [
+    { id: 1, title: 'test', content: 'ahahh', ingredients: [{ id: 1, title: 'test' }] }
+  ]
 })
 
 /**
