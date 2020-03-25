@@ -32,7 +32,7 @@ export const getters = {
    * get menus with filter text
    */
   getAllMenuWithFilter: state => (filtertext) => {
-    return state.menus.filter(m => m.title.includes(filtertext) || m.ingredients.find(i => i.title.includes(filtertext)))
+    return state.menus.filter(m => m.name.includes(filtertext) || m.ingredients.find(i => i.name.includes(filtertext)))
   }
 }
 
