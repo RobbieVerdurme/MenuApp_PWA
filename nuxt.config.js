@@ -70,6 +70,41 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+    },
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
     }
+  },
+  pwa: {
+    icon: {
+      iconSrc: '/favicon.ico'
+    },
+    manifest: {
+      name: 'Menuapp'
+    }
+  },
+  // makes the service worker
+  workbox: {
+    runtimeCaching: [
+      {
+        // make site offline available
+        urlPattern: `${process.env.baseUrl}/*`,
+        method: 'GET',
+        strategyOptions: {
+          cachename: 'menu',
+          cacheableResponse: { statuses: [0, 200] }
+        }
+      }
+    ]
   }
 }
