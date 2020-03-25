@@ -2,7 +2,7 @@
  * state
  */
 export const state = () => ({
-  user: {}
+  user: null
 })
 
 /**
@@ -41,12 +41,11 @@ export const actions = {
   * @param {object} signIn with prop email & password
   */
   async signIn ({ commit }, signIn) {
-    // eslint-disable-next-line no-useless-catch
     try {
       const user = await this.$fireAuth.signInWithEmailAndPassword(signIn.email, signIn.password)
-      commit('setUser', user)
+      commit('setUser', user.user)
     } catch (e) {
-      throw e
+      throw new Error(e)
     }
   },
 
@@ -56,9 +55,9 @@ export const actions = {
   async signOut ({ commit }) {
     try {
       await this.$fireAuth.signOut()
-      commit('setUser', {})
+      commit('setUser', null)
     } catch (e) {
-      alert(e)
+      throw new Error(e)
     }
   }
 }
