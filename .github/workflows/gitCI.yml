@@ -1,37 +1,17 @@
-# This is a basic workflow to help you get started with Actions
+build site:
+  image: node:6
+  stage: build
+  script:
+    - npm install --progress=false
+    - npm run build
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - dist
 
-name: CI
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
-on:
-  push:
-    branches:
-      - master
-      - develop
-  pull_request:
-    branches:
-      - master
-      - develop
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-
-    # Runs the npm i script
-    - name: install packages
-      run: npm install
-
-    # Runs the estlint format test
-    - name: run estlint format test
-      run: npm run lint
-      
-    # Runs the tests
-    - name: run the tests
-      run: npm run test
+unit test:
+  image: node:6
+  stage: test
+  script:
+    - npm install --progress=false
+    - npm run unit
