@@ -24,6 +24,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/style.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -43,8 +44,24 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['@nuxtjs/firebase']
   ],
+  firebase: {
+    config: {
+      apiKey: 'AIzaSyDn3_LnvVQ1icKvYtvoyIXD_X7Ik9Lyruw',
+      authDomain: 'menuapp-1cb58.firebaseapp.com',
+      databaseURL: 'https://menuapp-1cb58.firebaseio.com',
+      projectId: 'menuapp-1cb58',
+      storageBucket: 'menuapp-1cb58.appspot.com',
+      messagingSenderId: '349364600107',
+      appId: '1:349364600107:web:94b90dadf5838f4852596e'
+    },
+    services: {
+      auth: true,
+      realtimeDb: true
+    }
+  },
   /*
   ** Build configuration
   */
@@ -53,6 +70,41 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+    },
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
     }
+  },
+  pwa: {
+    icon: {
+      iconSrc: '/favicon.ico'
+    },
+    manifest: {
+      name: 'Menuapp'
+    }
+  },
+  // makes the service worker
+  workbox: {
+    runtimeCaching: [
+      {
+        // make site offline available
+        urlPattern: `${process.env.baseUrl}/*`,
+        method: 'GET',
+        strategyOptions: {
+          cachename: 'menu',
+          cacheableResponse: { statuses: [0, 200] }
+        }
+      }
+    ]
   }
 }

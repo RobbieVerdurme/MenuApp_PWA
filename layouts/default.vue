@@ -20,8 +20,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-.app-content {
-  min-height: 90vh;
-}
-</style>
