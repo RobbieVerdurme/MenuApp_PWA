@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - 10.19.0
+  
+before_install:
+ - chmod +x postinstall.sh 
+
+script:
+ - npm run lint
