@@ -14,11 +14,7 @@
 <style scoped>
 .phone-viewport {
   width: 100%;
-  height: 200px;
-  display: inline-flex;
-  align-items: flex-end;
-  overflow: hidden;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
 }
 </style>

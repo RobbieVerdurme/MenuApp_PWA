@@ -34,9 +34,6 @@ export default {
 </script>
 
 <style scoped>
-.center {
-  height: 10em;
-}
 .center span {
     text-align: center;
     margin: 0;
