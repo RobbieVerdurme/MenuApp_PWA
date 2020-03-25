@@ -30,8 +30,8 @@ jobs:
 
     # Runs the estlint format test
     - name: run estlint format test
-      run: npm lint
+      run: npm run lint
       
     # Runs the tests
-    - name: run estlint format test
-      run: npm lint
+    - name: run the tests
+      run: npm run test
