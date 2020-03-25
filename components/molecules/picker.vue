@@ -1,7 +1,9 @@
 <template>
   <div class="center">
     <!--Selected item-->
-    <span class="md-display-1">{{ selectedMenu.title }}</span>
+    <nuxt-link :to="{name: 'menu-id-info', params: {id: selectedMenu.id}}">
+      <span class="md-display-1">{{ selectedMenu.title }}</span>
+    </nuxt-link>
     <!--generate button-->
     <md-button class="md-raised md-primary" @click="generateRandomMenuitem">
       {{ generateMenuitem }}
@@ -23,7 +25,7 @@ export default {
       if (!menulistLength) {
         this.selectedMenu = { title: 'The menulist is empty' }
       } else {
-        const randomnumber = Math.floor(Math.random() * menulistLength)
+        const randomnumber = Math.floor(Math.random() * menulistLength) + 1
         this.selectedMenu = this.$store.getters['menus/getMenuitem'](randomnumber)
       }
     }
