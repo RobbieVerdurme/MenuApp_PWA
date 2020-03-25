@@ -9,6 +9,7 @@
 
 <script>
 export default {
+  middleware: 'data',
   components: {
     menuList: () => import('~/components/organisms/list'),
     vFilter: () => import('~/components/molecules/filter')

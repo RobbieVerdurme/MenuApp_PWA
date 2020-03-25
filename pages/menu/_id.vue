@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  middleware: 'data',
   data () {
     return {
       menuId: this.$route.params.id

@@ -17,11 +17,6 @@ export default {
   components: {
     vHeader: () => import('~/components/organisms/header'),
     vFooter: () => import('~/components/organisms/footer')
-  },
-  created () {
-    if (!this.$store.getters['menus/getMenuListLength']) {
-      this.$store.dispatch('menus/getMenusFromFirebase')
-    }
   }
 }
 </script>

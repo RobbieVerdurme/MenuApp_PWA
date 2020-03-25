@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  middleware: 'data',
   components: {
     picker: () => import('~/components/molecules/picker')
   }
