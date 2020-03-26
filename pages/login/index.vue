@@ -11,7 +11,7 @@
           <!--Username-->
           <div class="md-layout-item md-small-size-100">
             <md-field>
-              <label for="email">First Name</label>
+              <label for="email">E-mail</label>
               <md-input id="email" v-model="form.email" name="email" autocomplete="given-name" :disabled="sending" />
             </md-field>
           </div>

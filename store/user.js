@@ -2,7 +2,7 @@
  * state
  */
 export const state = () => ({
-  user: null
+  loggedin: false
 })
 
 /**
@@ -12,8 +12,8 @@ export const getters = {
   /**
   * get loggedin user
   */
-  getUser: (state) => {
-    return state.user
+  getLogin: (state) => {
+    return state.loggedin
   }
 }
 
@@ -22,12 +22,12 @@ export const getters = {
  */
 export const mutations = {
   /**
-   * set user
+   * set login
    * @param {*} state
    * @param {object} payload
    */
-  setUser (state, payload) {
-    state.user = payload
+  setLogin (state, payload) {
+    state.loggedin = payload
   }
 }
 
@@ -42,8 +42,8 @@ export const actions = {
   */
   async signIn ({ commit }, signIn) {
     try {
-      const user = await this.$fireAuth.signInWithEmailAndPassword(signIn.email, signIn.password)
-      commit('setUser', user.user)
+      await this.$fireAuth.signInWithEmailAndPassword(signIn.email, signIn.password)
+      commit('setLogin', true)
     } catch (e) {
       throw new Error(e)
     }
@@ -55,7 +55,7 @@ export const actions = {
   async signOut ({ commit }) {
     try {
       await this.$fireAuth.signOut()
-      commit('setUser', null)
+      commit('setLogin', false)
     } catch (e) {
       throw new Error(e)
     }
