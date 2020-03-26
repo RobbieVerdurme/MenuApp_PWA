@@ -65,3 +65,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.md-card {
+  display: contents;
+}
+</style>
