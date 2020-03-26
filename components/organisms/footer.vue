@@ -7,6 +7,9 @@
       <nuxt-link :to="{name:'list'}">
         <md-bottom-bar-item id="bottom-bar-item-list" md-label="List" md-icon="list" />
       </nuxt-link>
+      <nuxt-link :to="{name:'profile'}">
+        <md-bottom-bar-item id="bottom-bar-item-profile" md-label="Profile" md-icon="account_box" />
+      </nuxt-link>
     </md-bottom-bar>
   </div>
 </template>

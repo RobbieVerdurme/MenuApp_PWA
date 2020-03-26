@@ -11,7 +11,7 @@
           <!--Username-->
           <div class="md-layout-item md-small-size-100">
             <md-field>
-              <label for="email">First Name</label>
+              <label for="email">E-mail</label>
               <md-input id="email" v-model="form.email" name="email" autocomplete="given-name" :disabled="sending" />
             </md-field>
           </div>
@@ -54,14 +54,20 @@ export default {
   methods: {
     login () {
       this.sending = true
-      try {
-        this.$store.dispatch('user/signIn', { email: this.form.email, password: this.form.password })
-        this.$router.push({ name: 'index' })
-      } catch (e) {
-        this.sending = false
-        console.error(e)
-      }
+      this.$store.dispatch('user/signIn', { email: this.form.email, password: this.form.password })
+        .then(() => {
+          this.$router.push({ name: 'index' })
+        }).catch((err) => {
+          alert(err)
+          this.sending = false
+        })
     }
   }
 }
 </script>
+
+<style scoped>
+.md-card {
+  display: contents;
+}
+</style>
