@@ -52,6 +52,15 @@ export const mutations = {
    */
   setMenus (state, payload) {
     state.menus = payload
+  },
+
+  /**
+   * Add menu to local list
+   * @param {*} state
+   * @param {Object} payload
+   */
+  addMenu (state, payload) {
+    state.menus.push(payload)
   }
 }
 
@@ -81,5 +90,22 @@ export const actions = {
     })
 
     commit('setMenus', res)
+  },
+
+  /**
+   * write to firebase
+   */
+  async writeMenuToFirebase ({ commit }, menu) {
+    const messageRef = this.$fireDb.ref('FoodList').child('Food')
+
+    try {
+      const newKey = messageRef.push().key
+
+      menu.key = newKey
+      await messageRef.child(newKey).set(menu)
+    } catch (e) {
+      throw new Error(e)
+    }
+    commit('addMenu', menu)
   }
 }
