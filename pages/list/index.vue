@@ -4,6 +4,9 @@
     <md-content class="md-scrollbar">
       <menuList v-if="menulist" :list.sync="menulist" />
     </md-content>
+    <md-button v-if="this.$store.getters['user/getLogin']" class="md-fab md-accent" @click="addMenu">
+      <md-icon>add</md-icon>
+    </md-button>
   </div>
 </template>
 
@@ -26,6 +29,13 @@ export default {
      */
     filterList (value) {
       this.menulist = this.$store.getters['menus/getAllMenuWithFilter'](value.toString())
+    },
+
+    /**
+     * redirect to addmenu page
+     */
+    addMenu () {
+      this.$router.push({ name: 'menu-register-info' })
     }
   }
 }

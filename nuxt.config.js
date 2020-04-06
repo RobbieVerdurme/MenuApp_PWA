@@ -13,7 +13,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons' }
     ]
   },
   /*
@@ -101,7 +101,14 @@ export default {
         urlPattern: `${process.env.baseUrl}/*`,
         method: 'GET',
         strategyOptions: {
-          cachename: 'menu',
+          cacheableResponse: { statuses: [0, 200] }
+        }
+      },
+      {
+        urlPattern: 'https://fonts.googleapis.com/*',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: {
           cacheableResponse: { statuses: [0, 200] }
         }
       }
