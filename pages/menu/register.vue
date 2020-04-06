@@ -26,7 +26,8 @@ export default {
         name: '',
         discritpion: '',
         preperation: '',
-        ingredients: []
+        ingredients: [],
+        createrMenu: this.$fireAuth.currentUser.email
       },
       err: ''
     }
