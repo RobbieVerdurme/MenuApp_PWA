@@ -27,6 +27,9 @@ export default {
     }
   },
   methods: {
+    /**
+     * delete the menu from firebase
+     */
     deleteMenu () {
       this.$store.dispatch('menus/deleteMenuFromFirebase', this.item).catch((err) => {
         alert(err)
