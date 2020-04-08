@@ -61,6 +61,16 @@ export const mutations = {
    */
   addMenu (state, payload) {
     state.menus.push(payload)
+  },
+
+  /**
+   * delete menu from the list
+   * @param {*} state
+   * @param {Object} payload
+   */
+  deleteMenu (state, payload) {
+    const index = state.menus.indexOf(payload)
+    state.menus.splice(index, 1)
   }
 }
 
@@ -107,5 +117,18 @@ export const actions = {
       throw new Error(e)
     }
     commit('addMenu', menu)
+  },
+
+  /**
+   * delete menu
+   */
+  async deleteMenuFromFirebase ({ commit }, menu) {
+    const messageRef = this.$fireDb.ref('FoodList').child('Food')
+    try {
+      await messageRef.child(menu.key).remove()
+      commit('deleteMenu', menu)
+    } catch (e) {
+      throw new Error(e)
+    }
   }
 }
