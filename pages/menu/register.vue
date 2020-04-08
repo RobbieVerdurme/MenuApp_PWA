@@ -11,6 +11,7 @@
     <nuxt-child
       :menu="menu"
     />
+    <md-progress-bar v-if="sending" md-mode="indeterminate" />
     <md-button class="md-fab md-accent" @click="addMenu">
       <md-icon>save</md-icon>
     </md-button>
@@ -29,19 +30,36 @@ export default {
         ingredients: [],
         createrMenu: this.$fireAuth.currentUser.email
       },
-      err: ''
+      err: '',
+      sending: false
     }
   },
   methods: {
+    /**
+     * add menu to firebase then redirect to list page
+     */
     addMenu () {
       // check props
-      if (this.validateMenu()) {
+      if (this.validateMenu() && this.sending === false) {
+        this.sending = true
         // add to firebase
         this.$store.dispatch('menus/writeMenuToFirebase', this.menu)
+          .then(() => {
+            this.$router.push({ name: 'list' })
+          })
+          .catch((err) => {
+            this.err = err
+            this.sending = false
+          })
+      } else if (this.sending === true) {
+        this.err = 'Already sending'
       } else {
         this.err = 'Error'
       }
     },
+    /**
+     * validate menu to see if everything is filled in
+     */
     validateMenu () {
       if (this.menu.name && this.menu.discritpion && this.menu.preperation && this.menu.ingredients.length) {
         return true
