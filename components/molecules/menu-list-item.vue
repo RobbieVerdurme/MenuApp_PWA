@@ -28,9 +28,7 @@ export default {
   },
   methods: {
     deleteMenu () {
-      this.$store.dispatch('menus/deleteMenuFromFirebase', this.item).then(() => {
-        this.$router.push({ name: 'list' })
-      }).catch((err) => {
+      this.$store.dispatch('menus/deleteMenuFromFirebase', this.item).catch((err) => {
         alert(err)
       })
     }
