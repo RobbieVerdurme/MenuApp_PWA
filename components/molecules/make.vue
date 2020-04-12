@@ -1,11 +1,11 @@
 <template>
-  <md-list>
-    <md-list-item class="md-elevation-2">
+  <md-card>
+    <md-card-content>
       <md-field>
         <md-textarea v-model="menu.preperation" md-autogrow disabled />
       </md-field>
-    </md-list-item>
-  </md-list>
+    </md-card-content>
+  </md-card>
 </template>
 
 <script>

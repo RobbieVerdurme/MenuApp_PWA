@@ -8,7 +8,11 @@ export default {
     editPreperation: () => import('~/components/molecules/registermenu-preperation')
   },
   props: {
-    menu: Object
+    menu: {
+      type: Object,
+      required: false,
+      default: () => {}
+    }
   },
   methods: {
     /**

@@ -20,4 +20,9 @@
   position: fixed;
   bottom: 0px;
 }
+.phone-viewport a {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
 </style>

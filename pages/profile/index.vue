@@ -17,7 +17,7 @@
             </md-card-content>
             <md-progress-bar v-if="sending" md-mode="indeterminate" />
             <md-card-actions>
-              <md-button class="md-primary" :disabled="sending" @click="logout">
+              <md-button class="md-accent" :disabled="sending" @click="logout">
                 Logout
               </md-button>
             </md-card-actions>
