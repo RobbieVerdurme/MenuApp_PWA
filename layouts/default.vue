@@ -20,3 +20,11 @@ export default {
   }
 }
 </script>
+<style scoped>
+.md-app-content {
+  background-image: linear-gradient(to bottom, rgb(152, 251, 152, 0.3) 0%,rgba(152, 251, 152,0.3) 100%), url('/Background_Ingedients.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+}
+</style>
