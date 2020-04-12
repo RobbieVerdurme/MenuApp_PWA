@@ -74,7 +74,11 @@
 <script>
 export default {
   props: {
-    ingredient: Object,
+    ingredient: {
+      type: Object,
+      required: false,
+      default: () => {}
+    },
     edit: Boolean
   },
   data () {

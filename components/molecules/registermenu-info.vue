@@ -27,7 +27,11 @@
 <script>
 export default {
   props: {
-    menu: Object
+    menu: {
+      type: Object,
+      required: false,
+      default: () => {}
+    }
   },
   data () {
     return {
