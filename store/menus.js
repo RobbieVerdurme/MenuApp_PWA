@@ -37,7 +37,7 @@ export const getters = {
    * get menus with filter text
    */
   getAllMenuWithFilter: state => (filtertext) => {
-    return state.menus.filter(m => m.name.includes(filtertext) || m.ingredients.find(i => i.name.includes(filtertext)))
+    return state.menus.filter(m => m.name.toLowerCase().includes(filtertext.toLowerCase()) || m.ingredients.find(i => i.name.toLowerCase().includes(filtertext.toLowerCase())))
   }
 }
 
