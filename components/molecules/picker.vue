@@ -5,8 +5,8 @@
       <span class="md-display-1">{{ selectedMenu.name }}</span>
     </nuxt-link>
     <!--generate button-->
-    <md-button class="md-raised md-primary" @click="generateRandomMenuitem">
-      {{ generateMenuitem }}
+    <md-button class=" md-fab md-raised md-primary" @click="generateRandomMenuitem">
+      <md-icon>cached</md-icon>
     </md-button>
   </div>
 </template>
@@ -15,11 +15,13 @@
 export default {
   data () {
     return {
-      selectedMenu: { name: 'Click on the button to generate a random menu' },
-      generateMenuitem: 'Generate menu'
+      selectedMenu: { name: 'Click on the button to generate a random menu' }
     }
   },
   methods: {
+    /**
+     * generate a random menu item
+     */
     generateRandomMenuitem () {
       const menulistLength = this.$store.getters['menus/getMenuListLength']
       if (!menulistLength) {
