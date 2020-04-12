@@ -16,6 +16,10 @@ export default {
     }
   },
   methods: {
+    /**
+     * filter the list with the filtertext
+     * send to parrent(listpage) to filter the list
+     */
     filterList (event) {
       this.$emit('filterListTextChanged', this.filtertext)
     }
