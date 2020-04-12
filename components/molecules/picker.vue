@@ -1,9 +1,10 @@
 <template>
   <div class="center">
     <!--Selected item-->
-    <nuxt-link :to="{name: 'menu-id-info', params: {id: selectedMenu.key}}">
+    <nuxt-link v-if="selectedMenu.key" :to="{name: 'menu-id-info', params: {id: selectedMenu.key}}">
       <span class="md-display-1">{{ selectedMenu.name }}</span>
     </nuxt-link>
+    <span v-else class="md-display-1">{{ selectedMenu.name }}</span>
     <!--generate button-->
     <md-button class=" md-fab md-raised md-primary" @click="generateRandomMenuitem">
       <md-icon>cached</md-icon>
