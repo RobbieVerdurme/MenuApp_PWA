@@ -12,7 +12,7 @@
       :menu="menu"
     />
     <md-progress-bar v-if="sending" md-mode="indeterminate" />
-    <md-button class="md-fab md-accent" @click="addMenu">
+    <md-button class="md-fab md-fab-top-right md-accent" @click="addMenu">
       <md-icon>save</md-icon>
     </md-button>
   </div>
