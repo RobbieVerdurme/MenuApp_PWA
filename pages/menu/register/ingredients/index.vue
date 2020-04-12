@@ -8,7 +8,11 @@ export default {
     editIngredients: () => import('~/components/organisms/registermenu-ingredients')
   },
   props: {
-    menu: Object
+    menu: {
+      type: Object,
+      required: false,
+      default: () => {}
+    }
   }
 
 }

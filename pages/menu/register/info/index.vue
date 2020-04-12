@@ -8,7 +8,11 @@ export default {
     editInfo: () => import('~/components/molecules/registermenu-info')
   },
   props: {
-    menu: Object
+    menu: {
+      type: Object,
+      required: false,
+      default: () => {}
+    }
   },
   methods: {
     /**
