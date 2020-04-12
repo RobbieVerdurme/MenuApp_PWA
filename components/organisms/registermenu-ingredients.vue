@@ -20,7 +20,11 @@ export default {
     addIngredient: () => import('~/components/molecules/registermenu-ingredient')
   },
   props: {
-    menu: Object
+    menu: {
+      type: Object,
+      required: false,
+      default: () => {}
+    }
   },
   methods: {
     /**
