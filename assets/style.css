@@ -6,12 +6,6 @@
     text-align: center;
   }
 
-  .md-fab {
-    position: absolute !important;
-    right: 0px;
-    bottom: 0px;
-  }
-
   .error {
     color: red;
   }
