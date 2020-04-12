@@ -31,11 +31,8 @@
           <md-field>
             <label>Measurement</label>
             <md-select v-model="measurement" md-dense>
-              <md-option value="liter">
-                Liter
-              </md-option>
-              <md-option value="unit">
-                Unit
+              <md-option v-for="options in measurementOptions" :key="options" :value="options">
+                {{ options }}
               </md-option>
             </md-select>
           </md-field>
@@ -83,6 +80,8 @@ export default {
   },
   data () {
     return {
+      // measurement options
+      measurementOptions: ['Liter', 'Centiliter', 'Kilo', 'Gram', 'Unit', 'Tablespoons'],
       // ingredient props
       name: '',
       quantity: '',
