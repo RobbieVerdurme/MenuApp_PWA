@@ -1,10 +1,8 @@
 <template>
   <div>
     <vFilter @filterListTextChanged="filterList" />
-    <md-content class="md-scrollbar">
-      <menuList v-if="menulist" :list.sync="menulist" />
-    </md-content>
-    <md-button v-if="this.$store.getters['user/getLogin']" class="md-fab md-accent" @click="addMenu">
+    <menuList v-if="menulist" :list.sync="menulist" />
+    <md-button v-if="this.$store.getters['user/getLogin']" class="md-fab md-fab-top-right md-accent" @click="addMenu">
       <md-icon>add</md-icon>
     </md-button>
   </div>
@@ -40,9 +38,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-  .md-content {
-    max-height: 70vh;
-    overflow: auto;
-  }
-</style>
