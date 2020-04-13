@@ -2,6 +2,9 @@
 
 > This is a replica of the [menuapp](https://github.com/RobbieVerdurme/MenuApp) but in progressive web application form.
 
+## Changes
+Look at the [Changelog](https://github.com/RobbieVerdurme/menuapp_pwa/blob/develop/Changelog.md)
+
 ## Build Setup
 
 ```bash
