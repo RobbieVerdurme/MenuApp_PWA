@@ -11,7 +11,7 @@
 
         <!--Menu description-->
         <md-field>
-          <label>Type menu description here</label>
+          <label>Type menu description + number of persons here</label>
           <md-input v-model="description" @change="setMenuDescription" />
         </md-field>
         <!--/Menu description-->
