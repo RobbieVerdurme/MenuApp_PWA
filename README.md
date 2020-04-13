@@ -5,6 +5,9 @@
 ## Changes
 Look at the [Changelog](https://github.com/RobbieVerdurme/menuapp_pwa/blob/develop/Changelog.md)
 
+## Demo
+This application is live on [heroku](https://menupwa.herokuapp.com/)
+
 ## Build Setup
 
 ```bash
