@@ -131,7 +131,7 @@ export default {
      * check if everthing is filled in
      */
     checkIngredient () {
-      if (!this.name && !this.quantity && !this.measurement) {
+      if (!this.name || !this.quantity || !this.measurement) {
         this.err = 'Fill in all items before adding'
         return false
       } else {
