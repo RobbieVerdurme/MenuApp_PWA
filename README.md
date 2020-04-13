@@ -1,6 +1,6 @@
-# menuapp
+# Menuapp
 
-> this is a replica of the [menuapp](https://github.com/RobbieVerdurme/MenuApp) but in pwa form
+> This is a replica of the [menuapp](https://github.com/RobbieVerdurme/MenuApp) but in progressive web application form.
 
 ## Build Setup
 
@@ -19,4 +19,19 @@ $ npm run start
 $ npm run generate
 ```
 
+## env variables
+| env variable |Development    | Production          |
+| -------------|---------------| --------------------|
+| baseUrl      |localhost:3000 | process.env.BASE_URL|
+
+## Build with
+- vue: https://vuejs.org/
+- nuxt: https://nuxtjs.org/
+- nuxt pwa: https://pwa.nuxtjs.org/
+- nuxt axios: https://axios.nuxtjs.org/
+
+## Nuxt
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Authors
+- Robbie Verdurme - *Initial work* - [GitHub](https://github.com/RobbieVerdurme)
