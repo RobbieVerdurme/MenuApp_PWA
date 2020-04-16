@@ -34,6 +34,16 @@ export default {
       sending: false
     }
   },
+  created () {
+    // check if there is a menu in the params
+    // if there is a menu in the params use that menu to edit
+    const chosenMenu = this.$store.getters['menus/getSelectedMenu']
+    if (!Object.keys(chosenMenu).length) {
+      this.$store.commit('menus/setSelectedMenu', this.menu)
+    } else {
+      this.menu = chosenMenu
+    }
+  },
   methods: {
     /**
      * add menu to firebase then redirect to list page
@@ -43,7 +53,7 @@ export default {
       if (this.validateMenu() && this.sending === false) {
         this.sending = true
         // add to firebase
-        this.$store.dispatch('menus/writeMenuToFirebase', this.menu)
+        this.$store.dispatch('menus/writeMenuToFirebase')
           .then(() => {
             this.$router.push({ name: 'list' })
           })

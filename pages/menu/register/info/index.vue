@@ -1,5 +1,5 @@
 <template>
-  <editInfo :menu="menu" @setMenuTitle="setMenuTitle" @setMenuDescription="setMenuDescription" />
+  <editInfo :menu="menu" />
 </template>
 
 <script>
@@ -12,21 +12,6 @@ export default {
       type: Object,
       required: false,
       default: () => {}
-    }
-  },
-  methods: {
-    /**
-     * set menu title
-     */
-    setMenuTitle (value) {
-      this.menu.name = value
-    },
-
-    /**
-     * set menu desciption
-     */
-    setMenuDescription (value) {
-      this.menu.discritpion = value
     }
   }
 }

@@ -82,10 +82,13 @@ export default {
     return {
       // measurement options
       measurementOptions: ['Liter', 'Centiliter', 'Kilo', 'Gram', 'Unit', 'Tablespoons'],
+
       // ingredient props
       name: '',
       quantity: '',
       measurement: '',
+
+      // error
       err: ''
     }
   },
@@ -100,31 +103,28 @@ export default {
   methods: {
     /**
      * add ingredient
-     * send ingredient to the parrent to add to list
      */
     addIngredient () {
       if (this.checkIngredient()) {
-        this.$emit('addIngredient', { name: this.name, quantity: this.quantity, measurement: this.measurement })
+        this.$store.commit('menus/addIngredientSelectedMenu', { name: this.name, quantity: this.quantity, measurement: this.measurement })
         this.resetIntredient()
       }
     },
 
     /**
      * edit the ingredient
-     * send ingredient to parrent to edit in list
      */
     editIngredient () {
       if (this.checkIngredient()) {
-        this.$emit('editIngredient', { newIngredient: { name: this.name, quantity: this.quantity, measurement: this.measurement }, oldIngredient: this.ingredient })
+        this.$store.commit('menus/editIngredientSelectedMenu', { newIngredient: { name: this.name, quantity: this.quantity, measurement: this.measurement }, oldIngredient: this.ingredient })
       }
     },
 
     /**
      * delete ingredient
-     * send ingredient to parrent to delete from list
      */
     deleteIngredient () {
-      this.$emit('deleteIngredient', this.ingredient)
+      this.$store.commit('menus/deleteIngredientSelectedMenu', this.ingredient)
     },
 
     /**
