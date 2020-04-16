@@ -1,6 +1,6 @@
 <template>
   <md-card>
-    <nuxt-link :to="{name: 'menu-id-info', params: {id: item.key} }" class="contentwith">
+    <nuxt-link :to="{name: 'menu-id-info', params: {id: item.key} }">
       <md-card-header>
         <md-card-header-text>
           <div class="md-title">
@@ -10,14 +10,12 @@
       </md-card-header>
       <md-card-content>{{ item.discritpion }}</md-card-content>
     </nuxt-link>
-    <md-card-actions v-if="this.$store.getters['user/getLogin'] && this.$fireAuth.currentUser.email === item.createrMenu">
-      <md-button class="md-accent" @click="editMenu">
-        Edit
-      </md-button>
-    </md-card-actions>
-    <md-card-actions v-if="this.$store.getters['user/getLogin'] && this.$fireAuth.currentUser.email === item.createrMenu">
+    <md-card-actions v-if="this.$store.getters['user/getLogin'] && this.$fireAuth.currentUser.email === item.createrMenu" class="center">
       <md-button class="md-accent" @click="deleteMenu">
         Delete
+      </md-button>
+      <md-button class="md-accent" @click="editMenu">
+        Edit
       </md-button>
     </md-card-actions>
   </md-card>
@@ -51,7 +49,8 @@ export default {
 }
 </script>
 <style scoped>
-.contentwith {
-  width: 100%;
+.center {
+  display: flex;
+  justify-content: center;
 }
 </style>
