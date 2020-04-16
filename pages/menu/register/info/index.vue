@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  middleware: 'authenticated',
   components: {
     editInfo: () => import('~/components/molecules/registermenu-info')
   },

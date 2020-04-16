@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  middleware: 'authenticated',
   components: {
     editPreperation: () => import('~/components/molecules/registermenu-preperation')
   },
