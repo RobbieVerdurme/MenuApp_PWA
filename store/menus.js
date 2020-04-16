@@ -2,13 +2,21 @@
  * state
  */
 export const state = () => ({
-  menus: []
+  menus: [],
+  selectedMenu: {}
 })
 
 /**
  * getters
  */
 export const getters = {
+  /**
+   * get selected menu
+   */
+  getSelectedMenu: (state) => {
+    return state.selectedMenu
+  },
+
   /**
    * get menu item on place number
    */
@@ -71,6 +79,80 @@ export const mutations = {
   deleteMenu (state, payload) {
     const index = state.menus.indexOf(payload)
     state.menus.splice(index, 1)
+  },
+
+  /**
+   * set key of selected menu
+   * @param {*} state
+   * @param {String} payload
+   */
+  setKeySelectedMenu (state, payload) {
+    state.selectedMenu.key = payload
+  },
+
+  /**
+   * set the selected menu
+   * @param {*} state
+   * @param {Object} payload
+   */
+  setSelectedMenu (state, payload) {
+    state.selectedMenu = payload
+  },
+
+  /**
+   * set name of menu
+   * @param {*} state
+   * @param {String} payload
+   */
+  setNameSelectedMenu (state, payload) {
+    state.selectedMenu.name = payload
+  },
+
+  /**
+   * set description of menu
+   * @param {*} state
+   * @param {String} payload
+   */
+  setDescriptionSelectedMenu (state, payload) {
+    state.selectedMenu.discritpion = payload
+  },
+
+  /**
+   * add ingredient to selected menu
+   * @param {*} state
+   * @param {Object} payload
+   */
+  addIngredientSelectedMenu (state, payload) {
+    state.selectedMenu.ingredients.push(payload)
+  },
+
+  /**
+   * edit ingredient of selected menu
+   * @param {*} state
+   * @param {Object} payload
+   */
+  editIngredientSelectedMenu (state, payload) {
+    const index = state.selectedMenu.ingredients.indexOf(payload.oldIngredient)
+    state.selectedMenu.ingredients[index] = payload.newIngredient
+  },
+
+  /**
+   * delete ingredient from selected menu
+   * @param {*} state
+   * @param {Object} payload
+   */
+  deleteIngredientSelectedMenu (state, payload) {
+    const index = state.selectedMenu.ingredients.indexOf(payload)
+    state.selectedMenu.ingredients.splice(index, 1)
+  },
+
+  /**
+   * set preperation of menu
+   * @param {*} state
+   * @param {String} payload
+   */
+  setPreperationSelectedMenu (state, payload) {
+    state.selectedMenu.preperation = payload
   }
 }
 
@@ -105,18 +187,26 @@ export const actions = {
   /**
    * write to firebase
    */
-  async writeMenuToFirebase ({ commit }, menu) {
+  async writeMenuToFirebase ({ commit, state }) {
     const messageRef = this.$fireDb.ref('FoodList').child('Food')
+    const chosenMenu = state.selectedMenu
 
     try {
-      const newKey = messageRef.push().key
+      if (chosenMenu.key) {
+        // update menu
+        await messageRef.child(chosenMenu.key).update(chosenMenu.selectedMenu)
+      } else {
+        // generate key for menu
+        const newKey = messageRef.push().key
+        commit('setKeySelectedMenu', newKey)
 
-      menu.key = newKey
-      await messageRef.child(newKey).set(menu)
+        // add menu to firebase
+        await messageRef.child(newKey).set(chosenMenu)
+        commit('addMenu', chosenMenu)
+      }
     } catch (e) {
       throw new Error(e)
     }
-    commit('addMenu', menu)
   },
 
   /**
