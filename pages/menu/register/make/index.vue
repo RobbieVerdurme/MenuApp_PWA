@@ -1,5 +1,5 @@
 <template>
-  <editPreperation :menu="menu" @setMenuPreperation="setMenuPreperation" />
+  <editPreperation :menu="menu" />
 </template>
 
 <script>
@@ -12,14 +12,6 @@ export default {
       type: Object,
       required: false,
       default: () => {}
-    }
-  },
-  methods: {
-    /**
-     * set menu perperation
-     */
-    setMenuPreperation (value) {
-      this.menu.preperation = value
     }
   }
 }

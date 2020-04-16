@@ -40,14 +40,14 @@ export default {
      * set menu title
      */
     setMenuTitle () {
-      this.$emit('setMenuTitle', this.title)
+      this.$store.commit('menus/setNameSelectedMenu', this.title)
     },
 
     /**
      * set menu description
      */
     setMenuDescription () {
-      this.$emit('setMenuDescription', this.description)
+      this.$store.commit('menus/setDescriptionSelectedMenu', this.description)
     }
   }
 }

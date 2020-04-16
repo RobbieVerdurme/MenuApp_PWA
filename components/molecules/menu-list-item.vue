@@ -1,6 +1,6 @@
 <template>
   <md-card>
-    <nuxt-link :to="{name: 'menu-id-info', params: {id: item.key} }" class="contentwith">
+    <nuxt-link :to="{name: 'menu-id-info', params: {id: item.key} }">
       <md-card-header>
         <md-card-header-text>
           <div class="md-title">
@@ -10,9 +10,12 @@
       </md-card-header>
       <md-card-content>{{ item.discritpion }}</md-card-content>
     </nuxt-link>
-    <md-card-actions v-if="this.$store.getters['user/getLogin'] && this.$fireAuth.currentUser.email === item.createrMenu">
+    <md-card-actions v-if="this.$store.getters['user/getLogin'] && this.$fireAuth.currentUser.email === item.createrMenu" class="center">
       <md-button class="md-accent" @click="deleteMenu">
         Delete
+      </md-button>
+      <md-button class="md-accent" @click="editMenu">
+        Edit
       </md-button>
     </md-card-actions>
   </md-card>
@@ -34,12 +37,20 @@ export default {
       this.$store.dispatch('menus/deleteMenuFromFirebase', this.item).catch((err) => {
         alert(err)
       })
+    },
+    /**
+     * edit the menu
+     */
+    editMenu () {
+      this.$store.commit('menus/setSelectedMenu', this.item)
+      this.$router.push({ name: 'menu-register-info' })
     }
   }
 }
 </script>
 <style scoped>
-.contentwith {
-  width: 100%;
+.center {
+  display: flex;
+  justify-content: center;
 }
 </style>
