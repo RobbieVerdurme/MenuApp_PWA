@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+## [Unreleased]
+## [1.0.2]
+### Added
+- Edit menu | 2020-04-16
+
+### Changed
+- register pages added middleware auth | 2020-04-16
+
 ## [Released]
 ## Hotfix - 2020-04-14
 ### Changed
