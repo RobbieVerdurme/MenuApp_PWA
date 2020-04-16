@@ -70,6 +70,14 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      config.module.rules.push({
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      })
     },
     extractCSS: true,
     optimization: {
@@ -77,7 +85,7 @@ export default {
         cacheGroups: {
           styles: {
             name: 'styles',
-            test: /\.(css|vue)$/,
+            test: /\.(css|vue|scss)$/,
             chunks: 'all',
             enforce: true
           }
