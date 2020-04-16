@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Released]
+## Hotfix - 2020-04-14
+### Changed
+ - add ingredient validation | 2020-04-13
+ - add ingredient info placeholder | 2020-04-13
+ - changed the default theme to custum theme | 2020-04-14
 
 ## [1.0.1] - 2020-04-12
 ### Added
