@@ -2,7 +2,7 @@
   <div>
     <label>Filter</label>
     <md-field>
-      <label>Type the name of the recipe here</label>
+      <label>Type name of recipe or ingredient here</label>
       <md-input v-model="filtertext" @change="filterList" />
     </md-field>
   </div>
