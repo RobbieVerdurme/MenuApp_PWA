@@ -37,6 +37,7 @@ $ npm run generate
 - nuxt pwa: https://pwa.nuxtjs.org/
 - nuxt axios: https://axios.nuxtjs.org/
 - nuxt firebase: https://firebase.nuxtjs.org/
+- nuxt vuetify: https://github.com/nuxt-community/vuetify-module
 - firebase: https://www.npmjs.com/package/firebase
 - sass-loader: https://www.npmjs.com/package/sass-loader
 
