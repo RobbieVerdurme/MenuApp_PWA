@@ -9,6 +9,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 - register pages added middleware auth | 2020-04-16
+- refactor store to action,mutation,state,getters files | 2020-04-17
+- update code to refactor store | 2020-04-17
 
 ## [Released]
 ## Hotfix - 2020-04-14
