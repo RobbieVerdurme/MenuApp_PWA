@@ -8,14 +8,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Edit menu | 2020-04-16
 
 ### Changed
-- register pages added middleware auth | 2020-04-16
+- Register pages added middleware auth | 2020-04-16
+- Refactor store to action,mutation,state,getters files | 2020-04-17
+- Update code to refactor store | 2020-04-17
 
 ## [Released]
 ## Hotfix - 2020-04-14
 ### Changed
- - add ingredient validation | 2020-04-13
- - add ingredient info placeholder | 2020-04-13
- - changed the default theme to custum theme | 2020-04-14
+ - Add ingredient validation | 2020-04-13
+ - Add ingredient info placeholder | 2020-04-13
+ - Changed the default theme to custum theme | 2020-04-14
 
 ## [1.0.1] - 2020-04-12
 ### Added

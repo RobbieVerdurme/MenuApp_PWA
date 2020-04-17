@@ -2,7 +2,7 @@
   <div>
     <vFilter @filterListTextChanged="filterList" />
     <menuList v-if="menulist" :list.sync="menulist" />
-    <md-button v-if="this.$store.getters['user/getLogin']" class="md-fab md-fab-top-right md-accent" @click="addMenu">
+    <md-button v-if="this.$store.getters.getLogin" class="md-fab md-fab-top-right md-accent" @click="addMenu">
       <md-icon>add</md-icon>
     </md-button>
   </div>
@@ -17,7 +17,7 @@ export default {
   },
   data () {
     return {
-      menulist: this.$store.getters['menus/getAllMenuItems']
+      menulist: this.$store.getters.getAllMenuItems
     }
   },
   methods: {
@@ -26,7 +26,7 @@ export default {
      * filter list with de value that has been given
      */
     filterList (value) {
-      this.menulist = this.$store.getters['menus/getAllMenuWithFilter'](value.toString())
+      this.menulist = this.$store.getters.getAllMenuWithFilter(value.toString())
     },
 
     /**

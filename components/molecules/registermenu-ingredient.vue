@@ -106,7 +106,7 @@ export default {
      */
     addIngredient () {
       if (this.checkIngredient()) {
-        this.$store.commit('menus/addIngredientSelectedMenu', { name: this.name, quantity: this.quantity, measurement: this.measurement })
+        this.$store.commit('addIngredientSelectedMenu', { name: this.name, quantity: this.quantity, measurement: this.measurement })
         this.resetIntredient()
       }
     },
@@ -116,7 +116,7 @@ export default {
      */
     editIngredient () {
       if (this.checkIngredient()) {
-        this.$store.commit('menus/editIngredientSelectedMenu', { newIngredient: { name: this.name, quantity: this.quantity, measurement: this.measurement }, oldIngredient: this.ingredient })
+        this.$store.commit('editIngredientSelectedMenu', { newIngredient: { name: this.name, quantity: this.quantity, measurement: this.measurement }, oldIngredient: this.ingredient })
       }
     },
 
@@ -124,7 +124,7 @@ export default {
      * delete ingredient
      */
     deleteIngredient () {
-      this.$store.commit('menus/deleteIngredientSelectedMenu', this.ingredient)
+      this.$store.commit('deleteIngredientSelectedMenu', this.ingredient)
     },
 
     /**
