@@ -10,7 +10,7 @@
       </md-card-header>
       <md-card-content>{{ item.discritpion }}</md-card-content>
     </nuxt-link>
-    <md-card-actions v-if="this.$store.getters['user/getLogin'] && this.$fireAuth.currentUser.email === item.createrMenu" class="center">
+    <md-card-actions v-if="this.$store.getters.getLogin && this.$fireAuth.currentUser.email === item.createrMenu" class="center">
       <md-button class="md-accent" @click="deleteMenu">
         Delete
       </md-button>
@@ -34,7 +34,7 @@ export default {
      * delete the menu from firebase
      */
     deleteMenu () {
-      this.$store.dispatch('menus/deleteMenuFromFirebase', this.item).catch((err) => {
+      this.$store.dispatch('deleteMenuFromFirebase', this.item).catch((err) => {
         alert(err)
       })
     },
@@ -42,7 +42,7 @@ export default {
      * edit the menu
      */
     editMenu () {
-      this.$store.commit('menus/setSelectedMenu', this.item)
+      this.$store.commit('setSelectedMenu', this.item)
       this.$router.push({ name: 'menu-register-info' })
     }
   }

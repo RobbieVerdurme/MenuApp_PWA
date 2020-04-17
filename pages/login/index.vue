@@ -54,7 +54,7 @@ export default {
   methods: {
     login () {
       this.sending = true
-      this.$store.dispatch('user/signIn', { email: this.form.email, password: this.form.password })
+      this.$store.dispatch('signIn', { email: this.form.email, password: this.form.password })
         .then(() => {
           this.$router.push({ name: 'index' })
         }).catch((err) => {

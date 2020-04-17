@@ -30,7 +30,7 @@ export default {
      * set menu preperation
      */
     setMenuPreperation () {
-      this.$store.commit('menus/setPreperationSelectedMenu', this.preperation)
+      this.$store.commit('setPreperationSelectedMenu', this.preperation)
     }
   }
 }

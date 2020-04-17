@@ -38,9 +38,9 @@ export default {
   created () {
     // check if there is a menu in the params
     // if there is a menu in the params use that menu to edit
-    const chosenMenu = this.$store.getters['menus/getSelectedMenu']
+    const chosenMenu = this.$store.getters.getSelectedMenu
     if (!Object.keys(chosenMenu).length) {
-      this.$store.commit('menus/setSelectedMenu', this.menu)
+      this.$store.commit('setSelectedMenu', this.menu)
     } else {
       this.menu = chosenMenu
     }
@@ -54,7 +54,7 @@ export default {
       if (this.validateMenu() && this.sending === false) {
         this.sending = true
         // add to firebase
-        this.$store.dispatch('menus/writeMenuToFirebase')
+        this.$store.dispatch('writeMenuToFirebase')
           .then(() => {
             this.$router.push({ name: 'list' })
           })

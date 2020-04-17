@@ -40,7 +40,7 @@ export default {
   methods: {
     logout () {
       this.sending = true
-      this.$store.dispatch('user/signOut')
+      this.$store.dispatch('signOut')
         .then(() => {
           this.sending = false
           this.$router.push({ name: 'login' })

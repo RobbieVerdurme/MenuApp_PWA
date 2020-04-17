@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     menu () {
-      return this.$store.getters['menus/getMenuitemWithId'](this.menuId)
+      return this.$store.getters.getMenuitemWithId(this.menuId)
     }
   }
 }
