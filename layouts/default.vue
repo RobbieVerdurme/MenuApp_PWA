@@ -30,6 +30,7 @@ export default {
      */
     swipe (direction) {
       switch (this.$route.name) {
+        // MAIN PAGES
         case 'index':
           if (direction === 'Left') { this.$router.push({ name: 'list' }) }
           break
@@ -39,6 +40,27 @@ export default {
         case 'login' || 'profile':
           if (direction === 'Right') { this.$router.push(({ name: 'list' })) }
           break
+
+        // MENU DETAIL
+        case 'menu-id-info':
+          if (direction === 'Left') { this.$router.push({ name: 'menu-id-ingredients', params: { id: this.$route.params.id } }) }
+          break
+        case 'menu-id-ingredients':
+          if (direction === 'Left') { this.$router.push({ name: 'menu-id-make', params: { id: this.$route.params.id } }) } else { this.$router.push({ name: 'menu-id-info', params: { id: this.$route.params.id } }) }
+          break
+        case 'menu-id-make':
+          if (direction === 'Right') { this.$router.push({ name: 'menu-id-ingredients', params: { id: this.$route.params.id } }) }
+          break
+
+        // MENU REGISTER
+        case 'menu-register-info':
+          if (direction === 'Left') { this.$router.push({ name: 'menu-register-ingredients' }) }
+          break
+        case 'menu-register-ingredients':
+          if (direction === 'Left') { this.$router.push({ name: 'menu-register-make' }) } else { this.$router.push({ name: 'menu-register-info' }) }
+          break
+        case 'menu-register-make':
+          if (direction === 'Right') { this.$router.push({ name: 'menu-register-ingredients' }) }
       }
     }
   }
