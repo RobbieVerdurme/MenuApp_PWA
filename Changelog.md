@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Refactor images to one place in project | 2020-04-17
 - Update code to refactor images | 2020-04-17
 - Update code to refactor store | 2020-04-17
+- Updated filter label text | 2020-04-17
 
 ## [Released]
 ## Hotfix - 2020-04-14
