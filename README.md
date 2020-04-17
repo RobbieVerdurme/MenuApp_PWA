@@ -38,6 +38,7 @@ $ npm run generate
 - nuxt axios: https://axios.nuxtjs.org/
 - nuxt firebase: https://firebase.nuxtjs.org/
 - firebase: https://www.npmjs.com/package/firebase
+- sass-loader: https://www.npmjs.com/package/sass-loader
 
 ## Nuxt
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
