@@ -4,7 +4,13 @@
       <md-app-toolbar class="md-primary">
         <vHeader />
       </md-app-toolbar>
-      <md-app-content class="app-content">
+      <md-app-content
+        v-touch="{
+          left: () => swipe('Left'),
+          right: () => swipe('Right')
+        }"
+        class="app-content"
+      >
         <nuxt />
       </md-app-content>
     </md-app>
@@ -17,6 +23,24 @@ export default {
   components: {
     vHeader: () => import('~/components/organisms/header'),
     vFooter: () => import('~/components/organisms/footer')
+  },
+  methods: {
+    /**
+     * swipeable pages
+     */
+    swipe (direction) {
+      switch (this.$route.name) {
+        case 'index':
+          if (direction === 'Left') { this.$router.push({ name: 'list' }) }
+          break
+        case 'list':
+          if (direction === 'Left') { this.$router.push({ name: 'login' }) } else { this.$router.push({ name: 'index' }) }
+          break
+        case 'login' || 'profile':
+          if (direction === 'Right') { this.$router.push(({ name: 'list' })) }
+          break
+      }
+    }
   }
 }
 </script>
