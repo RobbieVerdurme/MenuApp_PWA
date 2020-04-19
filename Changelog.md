@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
+## [1.0.3]
+
+## [Released]
 ## [1.0.2]
 ### Added
 - Add swipeable pages | 2020-04-17
@@ -17,7 +20,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update code to refactor store | 2020-04-17
 - Updated filter label text | 2020-04-17
 
-## [Released]
 ## Hotfix - 2020-04-14
 ### Changed
  - Add ingredient validation | 2020-04-13
