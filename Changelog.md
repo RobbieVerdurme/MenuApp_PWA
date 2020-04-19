@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 - Add swipeable pages | 2020-04-17
 - Edit menu | 2020-04-16
+- Register page + functionality | 2020-04-19
 
 ### Changed
 - Register pages added middleware auth | 2020-04-16
