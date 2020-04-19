@@ -29,6 +29,19 @@ export default {
     }
   },
 
+  /**
+   * register to firebase
+   * @param {*} param0
+   * @param {Object} credentials
+   */
+  async registerAccountToFirebase ({ commit }, credentials) {
+    try {
+      await this.$fireAuth.createUserWithEmailAndPassword(credentials.email, credentials.password)
+    } catch (e) {
+      throw new Error(e)
+    }
+  },
+
   /** *******************MENU********************** */
   /**
      * get menus from firebase
