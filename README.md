@@ -32,9 +32,14 @@ $ npm run generate
 
 ## Build with
 - vue: https://vuejs.org/
+- vue-material: https://vuematerial.io/
 - nuxt: https://nuxtjs.org/
 - nuxt pwa: https://pwa.nuxtjs.org/
 - nuxt axios: https://axios.nuxtjs.org/
+- nuxt firebase: https://firebase.nuxtjs.org/
+- nuxt vuetify: https://github.com/nuxt-community/vuetify-module
+- firebase: https://www.npmjs.com/package/firebase
+- sass-loader: https://www.npmjs.com/package/sass-loader
 
 ## Nuxt
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

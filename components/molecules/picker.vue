@@ -24,12 +24,12 @@ export default {
      * generate a random menu item
      */
     generateRandomMenuitem () {
-      const menulistLength = this.$store.getters['menus/getMenuListLength']
+      const menulistLength = this.$store.getters.getMenuListLength
       if (!menulistLength) {
         this.selectedMenu = { title: 'The menulist is empty' }
       } else {
         const randomnumber = Math.floor(Math.random() * menulistLength)
-        this.selectedMenu = this.$store.getters['menus/getMenuitem'](randomnumber)
+        this.selectedMenu = this.$store.getters.getMenuitem(randomnumber)
       }
     }
   }

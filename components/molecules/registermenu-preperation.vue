@@ -28,10 +28,9 @@ export default {
   methods: {
     /**
      * set menu preperation
-     * send to parrent to set preperation
      */
     setMenuPreperation () {
-      this.$emit('setMenuPreperation', this.preperation)
+      this.$store.commit('setPreperationSelectedMenu', this.preperation)
     }
   }
 }

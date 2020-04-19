@@ -31,6 +31,7 @@
             </md-field>
           </div>
         </div>
+        <span>Don't have an account yet? register <nuxt-link :to="{name:'register'}"> here </nuxt-link></span>
       </md-card-content>
       <md-progress-bar v-if="sending" md-mode="indeterminate" />
       <md-card-actions>
@@ -54,7 +55,7 @@ export default {
   methods: {
     login () {
       this.sending = true
-      this.$store.dispatch('user/signIn', { email: this.form.email, password: this.form.password })
+      this.$store.dispatch('signIn', { email: this.form.email, password: this.form.password })
         .then(() => {
           this.$router.push({ name: 'index' })
         }).catch((err) => {

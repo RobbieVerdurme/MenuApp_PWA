@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  middleware: 'authenticated',
   components: {
     editIngredients: () => import('~/components/organisms/registermenu-ingredients')
   },
