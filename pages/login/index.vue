@@ -31,6 +31,7 @@
             </md-field>
           </div>
         </div>
+        <span>Don't have an account yet? register <nuxt-link :to="{name:'register'}"> here </nuxt-link></span>
       </md-card-content>
       <md-progress-bar v-if="sending" md-mode="indeterminate" />
       <md-card-actions>
