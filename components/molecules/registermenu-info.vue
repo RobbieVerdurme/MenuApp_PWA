@@ -32,7 +32,7 @@ export default {
   data () {
     return {
       title: this.menu.name,
-      description: this.menu.discritpion
+      description: this.menu.description
     }
   },
   methods: {

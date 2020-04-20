@@ -8,7 +8,7 @@
           </div>
         </md-card-header-text>
       </md-card-header>
-      <md-card-content>{{ item.discritpion }}</md-card-content>
+      <md-card-content>{{ item.description }}</md-card-content>
     </nuxt-link>
     <md-card-actions v-if="this.$store.getters.getLogin && this.$fireAuth.currentUser.email === item.createrMenu" class="center">
       <md-button class="md-accent" @click="deleteMenu">

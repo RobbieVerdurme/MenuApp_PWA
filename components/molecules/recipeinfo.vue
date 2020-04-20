@@ -5,7 +5,7 @@
         <b>{{ menu.name }}</b>
       </md-card-header-text>
     </md-card-header>
-    <md-card-content> {{ menu.discritpion }} </md-card-content>
+    <md-card-content> {{ menu.description }} </md-card-content>
   </md-card>
 </template>
 
