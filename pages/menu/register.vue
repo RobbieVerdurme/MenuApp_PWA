@@ -26,7 +26,7 @@ export default {
       menu: {
         key: '',
         name: '',
-        discritpion: '',
+        description: '',
         preperation: '',
         ingredients: [],
         createrMenu: this.$fireAuth.currentUser.email
@@ -72,7 +72,7 @@ export default {
      * validate menu to see if everything is filled in
      */
     validateMenu () {
-      if (this.menu.name && this.menu.discritpion && this.menu.preperation && this.menu.ingredients.length) {
+      if (this.menu.name && this.menu.description && this.menu.preperation && this.menu.ingredients.length) {
         return true
       } else {
         return false

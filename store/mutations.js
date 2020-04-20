@@ -74,7 +74,7 @@ export default {
      * @param {String} payload
      */
   setDescriptionSelectedMenu (state, payload) {
-    state.selectedMenu.discritpion = payload
+    state.selectedMenu.description = payload
   },
 
   /**
