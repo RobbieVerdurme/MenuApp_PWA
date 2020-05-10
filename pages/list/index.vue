@@ -2,7 +2,7 @@
   <div>
     <vFilter @filterListTextChanged="filterList" />
     <menuList v-if="menulist" :list.sync="menulist" />
-    <md-button v-if="this.$store.getters.getLogin" class="md-fab md-fab-top-right md-accent" @click="addMenu">
+    <md-button class="md-fab md-fab-top-right md-accent" @click="addMenu">
       <md-icon>add</md-icon>
     </md-button>
   </div>
@@ -33,7 +33,11 @@ export default {
      * redirect to addmenu page
      */
     addMenu () {
-      this.$router.push({ name: 'menu-register-info' })
+      if (this.$store.getters.getLogin) {
+        this.$router.push({ name: 'menu-register-info' })
+      } else {
+        this.$router.push({ name: 'login' })
+      }
     }
   }
 }
