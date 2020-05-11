@@ -24,6 +24,13 @@ export default {
     vHeader: () => import('~/components/organisms/header'),
     vFooter: () => import('~/components/organisms/footer')
   },
+  created () {
+    this.$fireAuth.onAuthStateChanged((usr) => {
+      if (usr) {
+        this.$store.commit('setLogin', true)
+      }
+    })
+  },
   methods: {
     /**
      * swipeable pages
