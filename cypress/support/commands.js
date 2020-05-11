@@ -33,6 +33,7 @@ Cypress.Commands.add('login', () => {
     url: 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyDn3_LnvVQ1icKvYtvoyIXD_X7Ik9Lyruw',
     body: { email: username, password }
   }).then((res) => {
+    localStorage.setItem('token', res.body.idToken)
     cy.request({
       method: 'POST',
       url: 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDn3_LnvVQ1icKvYtvoyIXD_X7Ik9Lyruw',
