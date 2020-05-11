@@ -61,7 +61,9 @@ export default {
       appId: '1:349364600107:web:94b90dadf5838f4852596e'
     },
     services: {
-      auth: true,
+      auth: {
+        persistence: 'local'
+      },
       realtimeDb: true
     }
   },
