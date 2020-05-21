@@ -5,14 +5,14 @@
         <!--Menu title-->
         <md-field>
           <label>Type menu title here</label>
-          <md-input v-model="title" @change="setMenuTitle" />
+          <md-input id="menuTitle" v-model="title" @change="setMenuTitle" />
         </md-field>
         <!--/Menu title-->
 
         <!--Menu description-->
         <md-field>
           <label>Type menu description + number of persons here</label>
-          <md-input v-model="description" @change="setMenuDescription" />
+          <md-input id="menuDescription" v-model="description" @change="setMenuDescription" />
         </md-field>
         <!--/Menu description-->
       </md-card-header-text>

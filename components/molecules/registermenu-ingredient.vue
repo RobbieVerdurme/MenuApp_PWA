@@ -12,7 +12,7 @@
         <div class="md-layout-item md-small-size-100">
           <md-field>
             <label>Name</label>
-            <md-input v-model="name" />
+            <md-input id="ingredientName" v-model="name" />
           </md-field>
         </div>
         <!--/Name-->
@@ -21,7 +21,7 @@
         <div class="md-layout-item md-small-size-50">
           <md-field>
             <label>Quantity</label>
-            <md-input v-model="quantity" type="number" />
+            <md-input id="ingredientQuantity" v-model="quantity" type="number" />
           </md-field>
         </div>
         <!--/Quantity-->
@@ -30,7 +30,7 @@
         <div class="md-layout-item md-small-size-50">
           <md-field>
             <label>Measurement</label>
-            <md-select v-model="measurement" md-dense>
+            <md-select id="ingredientMesurement" v-model="measurement" md-dense>
               <md-option v-for="options in measurementOptions" :key="options" :value="options">
                 {{ options }}
               </md-option>
