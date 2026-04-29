@@ -1,4 +1,6 @@
 # Menuapp
+>> !! this repo is no longer maintained !!
+
 
 > This is a replica of the [menuapp](https://github.com/RobbieVerdurme/MenuApp) but in progressive web application form.
 
